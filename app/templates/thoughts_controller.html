@@ -1,8 +1,46 @@
 {% extends "base.html" %} {% block content %}
 <div class="container-fluid">
     <div class="row">
-        <h1>Manage your thoughts</h1>
+        <div class="col-sm-6">
+            <h1>Manage your thoughts</h1>
+        </div>
+
+        <div class="col-sm-6">
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myAddModal">Add a Thought
+            </button>
+            <div class="modal fade" id="myAddModal" tabindex="-1" role="dialog" aria-labelledby="myAddModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myAddModalLabel">
+                                Add
+                            </h5>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/thoughts_controller" method="POST" class="add-form">
+                                <label for="quotation">Quotation</label>
+                                <input type="text" name="quotation" id="quotation" required />
+                                <label for="metaphor">Metaphor</label>
+                                <input type="text" name="metaphor" id="metaphor" required />
+                                <label for="comment">Comment</label>
+                                <input type="text" name="comment" id="comment" required /><br>
+                                <!-- <button type="submit" class="btn btn-primary" value="Add">Add</button> -->
+                                <!-- </form> -->
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary" value="Add">Add</button>
+                            </form>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+
 
     <div class="row">
         <table class="table table-bordered table-dark table-striped table-hover table-responsive">
@@ -43,19 +81,6 @@
                 {% endfor %}
             </tbody>
         </table>
-        </div>
-
-        <div class="row">
-            <h1>Add a thought</h1>
-            <form action="/thoughts_controller" method="POST" class="add-form">
-                <label for="quotation">Quotation</label>
-                <input type="text" name="quotation" id="quotation" required />
-                <label for="metaphor">Metaphor</label>
-                <input type="text" name="metaphor" id="metaphor" required />
-                <label for="comment">Comment</label>
-                <input type="text" name="comment" id="comment" required /><br>
-                <button type="submit" class="btn btn-primary" value="Add">Add</button>
-            </form>
         </div>
 
     </div>
