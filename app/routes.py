@@ -31,7 +31,18 @@ def add_thought():
     return redirect('/thoughts_controller')
 
 # edit a Thought
-
+@app.route('/thoughts_controller/<int:thought_id>/edit', methods=['POST'])
+def edit(thought_id):
+    new_quotation = request.form.get("new_quotation")
+    new_metaphor = request.form.get("new_metaphor")
+    new_comment = request.form.get("new_comment")
+    thought_id = request.form.get("thought_id")
+    thought = Thought.query.filter_by(id=thought_id).first()
+    thought.quotation = new_quotation
+    thought.metaphor = new_metaphor
+    thought.comment = new_comment
+    db.session.commit()
+    return redirect('/thoughts_controller')
 
 # delete a Thought
 @app.route('/thoughts_controller/<int:thought_id>/delete', methods=['POST'])

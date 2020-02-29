@@ -5,40 +5,47 @@
     </div>
 
     <div class="row">
+        <table class="table table-bordered table-dark table-striped table-hover table-responsive">
+            <thead>
+                <th>ID</th>
+                <th>Quotation</th>
+                <th>Metaphor</th>
+                <th>Comment</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </thead>
+            <tbody>
+                {% for thought in thoughts %}
+                <tr>
+                    <td>{{ thought.id }}</td>
+                    <td>{{ thought.quotation }}</td>
+                    <td>{{ thought.metaphor }}</td>
+                    <td>{{ thought.comment }}</td>
+                    <td>
+                        <form method="POST" action="/thoughts_controller/{{thought.id}}/edit">
+                            <input type="hidden" value="{{thought.id}}" name="thought_id">
+                            <input type="text" value="{{thought.quotation}}" name="new_quotation" size="55">
+                            <input type="text" value="{{thought.metaphor}}" name="new_metaphor" size="55"><input type="text" value="{{thought.comment}}" name="new_comment" size="55">
 
-        <div class="col-sm-8">
-            <table class="table table-bordered table-dark table-striped table-hover table-responsive">
-                <thead>
-                    <th>ID</th>
-                    <th>Quotation</th>
-                    <th>Metaphor</th>
-                    <th>Comment</th>
-                    <th>More</th>
-                </thead>
-                <tbody>
-                    {% for thought in thoughts %}
-                    <tr>
-                        <td>{{ thought.id }}</td>
-                        <td>{{ thought.quotation }}</td>
-                        <td>{{ thought.metaphor }}</td>
-                        <td>{{ thought.comment }}</td>
-                        <td> There could be a button here
-                            <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
-                        </td>
-                        <td>
-                            <form action="{{url_for('delete', thought_id=thought.id)}}" method="POST">
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" value="Edit">Submit changes</button>
+                        </form>
+                    </td>
 
-                                <button type="submit" class="btn btn-primary" value="Delete">Delete
-                                            </button>
-                            </form>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+                    <td>
+                        <form action="{{url_for('delete', thought_id=thought.id)}}" method="POST">
+
+                            <button type="submit" class="btn btn-primary" value="Delete">Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
         </div>
 
-        <div class="col">
+        <div class="row">
             <h1>Add a thought</h1>
             <form action="/thoughts_controller" method="POST">
                 <label for="quotation">Quotation</label>
