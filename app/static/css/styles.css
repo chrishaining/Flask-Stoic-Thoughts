@@ -44,6 +44,12 @@
         justify-content: center;
         border: none
     }
+    
+    #carousel-row {
+        display: flex;
+        justify-content: center;
+        border: none
+    }
     /* columns */
     
     .col {
@@ -103,9 +109,18 @@
     /* carousel */
     
     #carouselExampleControls {
+        /* display: flex;
+        justify-content: center; */
+        border: none
+    }
+    /* .carousel-inner {
         display: flex;
         justify-content: center;
-        border: none
+    } */
+    
+    .carousel-item {
+        /* width: 300px; */
+        height: 300px
     }
     /* forms */
     
