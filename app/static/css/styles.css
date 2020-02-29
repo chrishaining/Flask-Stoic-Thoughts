@@ -1,7 +1,12 @@
+html {
+    background-color: #ECECEC
+}
+
+
 /* navbar */
 
 nav {
-    background-color: #080F5B;
+    background-color: #F78888;
 }
 
 nav a {
@@ -10,7 +15,7 @@ nav a {
 }
 
 nav a:hover {
-    color: gold;
+    color: #90CCF4;
     text-decoration: none;
 }
 
@@ -33,7 +38,9 @@ nav a:hover {
 
 .row {
     padding: 20px;
-    border: solid #080F5B 2px;
+    background-color: #90CCF4;
+    border: solid #F78888 2px;
+    margin: 40px
 }
 
 #card-row {
@@ -46,8 +53,8 @@ nav a:hover {
 /* columns */
 
 .col {
-    border-left: solid #080F5B 2px;
-    border-right: solid #080F5B 2px;
+    border-left: solid #F78888 2px;
+    border-right: solid #F78888 2px;
 }
 
 
@@ -121,4 +128,15 @@ nav a:hover {
     display: flex;
     justify-content: center;
     border: none
+}
+
+
+/* forms */
+
+.add-form {
+    background-color: #F3D250
+}
+
+input {
+    background-color: #ECECEC
 }
