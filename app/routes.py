@@ -34,7 +34,12 @@ def add_thought():
 
 
 # delete a Thought
-
+@app.route('/thoughts_controller/<int:thought_id>/delete', methods=['POST'])
+def delete(thought_id):
+    thought = Thought.query.get(thought_id)
+    db.session.delete(thought)
+    db.session.commit()
+    return redirect('/thoughts_controller')
 
 # a carousel view of the thoughts. 
 @app.route('/carousel')

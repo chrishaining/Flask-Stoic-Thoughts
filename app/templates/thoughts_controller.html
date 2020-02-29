@@ -25,6 +25,13 @@
                         <td> There could be a button here
                             <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
                         </td>
+                        <td>
+                            <form action="{{url_for('delete', thought_id=thought.id)}}" method="POST">
+
+                                <button type="submit" class="btn btn-primary" value="Delete">Delete
+                                            </button>
+                            </form>
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
