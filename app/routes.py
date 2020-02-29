@@ -20,7 +20,15 @@ def show_all_thoughts():
 
 
 # add a Thought
-
+@app.route('/thoughts_controller', methods=['POST'])
+def add_thought():
+    quotation = request.form['quotation']
+    metaphor = request.form['metaphor']
+    comment = request.form['comment']
+    newThought = Thought(quotation=quotation, metaphor=metaphor, comment=comment)
+    db.session.add(newThought)
+    db.session.commit()
+    return redirect('/thoughts_controller')
 
 # edit a Thought
 

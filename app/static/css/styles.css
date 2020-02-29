@@ -43,6 +43,14 @@ nav a:hover {
 }
 
 
+/* columns */
+
+.col {
+    border-left: solid #080F5B 2px;
+    border-right: solid #080F5B 2px;
+}
+
+
 /* fipcard */
 
 
