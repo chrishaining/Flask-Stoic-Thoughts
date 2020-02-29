@@ -5,7 +5,7 @@
             <h1>Manage your thoughts</h1>
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-sm-3">
             <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myAddModal">Add a Thought
             </button>
             <div class="modal fade" id="myAddModal" tabindex="-1" role="dialog" aria-labelledby="myAddModalLabel" aria-hidden="true">
@@ -19,14 +19,15 @@
                         <div class="modal-body">
                             <form action="/thoughts_controller" method="POST" class="add-form">
                                 <label for="quotation">Quotation</label>
-                                <input type="text" name="quotation" id="quotation" required />
+                                <!-- <input type="text" name="quotation" id="quotation" required /> -->
+                                <textarea class="form-control" name="quotation" id="quotation" rows=3 required></textarea>
                                 <label for="metaphor">Metaphor</label>
-                                <input type="text" name="metaphor" id="metaphor" required />
-                                <label for="comment">Comment</label>
-                                <input type="text" name="comment" id="comment" required /><br>
-                                <!-- <button type="submit" class="btn btn-primary" value="Add">Add</button> -->
-                                <!-- </form> -->
+                                <!-- <input type="text" name="metaphor" id="metaphor" required /> -->
+                                <textarea class="form-control" name="metaphor" id="metaphor" rows=3 required></textarea>
 
+                                <label for="comment">Comment</label>
+                                <!-- <input type="text" name="comment" id="comment" required /> -->
+                                <textarea class="form-control" name="comment" id="comment" rows=3 required></textarea>
 
                         </div>
                         <div class="modal-footer">
@@ -39,8 +40,6 @@
             </div>
         </div>
     </div>
-
-
 
     <div class="row">
         <table class="table table-bordered table-dark table-striped table-hover table-responsive">
@@ -60,14 +59,30 @@
                     <td>{{ thought.metaphor }}</td>
                     <td>{{ thought.comment }}</td>
                     <td>
-                        <form method="POST" action="/thoughts_controller/{{thought.id}}/edit">
-                            <input type="hidden" value="{{thought.id}}" name="thought_id">
-                            <input type="text" value="{{thought.quotation}}" name="new_quotation" size="55">
-                            <input type="text" value="{{thought.metaphor}}" name="new_metaphor" size="55"><input type="text" value="{{thought.comment}}" name="new_comment" size="55">
-
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary" value="Edit">Submit changes</button>
-                        </form>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditModal{{thought.id}}">Edit
+                                </button>
+                        <div class="modal fade" id="myEditModal{{thought.id}}" tabindex="-1" role="dialog" aria-labelledby="myEditModalLabel{{thought.id}}" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="myEditModalLabel{{thought.id}}">
+                                            Edit
+                                        </h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form method="POST" action="/thoughts_controller/{{thought.id}}/edit">
+                                            <input type="hidden" value="{{thought.id}}" name="thought_id">
+                                            <input type="text" value="{{thought.quotation}}" name="new_quotation" size="55">
+                                            <input type="text" value="{{thought.metaphor}}" name="new_metaphor" size="55"><input type="text" value="{{thought.comment}}" name="new_comment" size="55">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary" value="Edit">Submit changes</button>
+                                        </form>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </td>
 
                     <td>
@@ -81,7 +96,7 @@
                 {% endfor %}
             </tbody>
         </table>
-        </div>
-
     </div>
-    {% endblock %}
+
+</div>
+{% endblock %}

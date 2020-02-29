@@ -2,25 +2,25 @@
 <div class="container-fluid">
     <div class="row">
         <h1>Welcome to this collection of Stoic thoughts</h1>
-    </div>
-
-    <div class="row">
-        <h1>The gods have chosen a thought especially for you...</h1>
+        <p>The gods have chosen a thought especially for you...</p>
     </div>
 
     <div class="row" id="card-row">
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="https://mdbootstrap.com/img/Photos/Others/photo7.jpg" alt="Avatar" style="width:300px;height:300px;">
-                    <p>{{thought.metaphor}}</p>
-
+                    <img src="https://mdbootstrap.com/img/Photos/Others/photo7.jpg" alt="Metaphor" style="width:300px;height:300px;">
+                    <div class="flip-card-text">
+                        <p>{{thought.metaphor}}</p>
+                    </div>
                 </div>
-                <div class="flip-card-back">
-                    <img src="https://mdbootstrap.com/img/Photos/Others/photo5.jpg" alt="Avatar" style="width:300px;height:300px;">
-                    <p>{{thought.quotation}}</p>
-                    <p>{{thought.comment}}</p>
 
+                <div class="flip-card-back">
+                    <img src="https://mdbootstrap.com/img/Photos/Others/photo5.jpg" alt="Quotation" style="width:300px;height:300px;">
+                    <div class="flip-card-text">
+                        <p>{{thought.quotation}}</p>
+                        <p>{{thought.comment}}</p>
+                    </div>
                 </div>
             </div>
         </div>
