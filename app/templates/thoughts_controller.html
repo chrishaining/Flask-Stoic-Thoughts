@@ -88,13 +88,31 @@
                             </div>
                         </div>
                     </td>
-
                     <td>
-                        <form action="{{url_for( 'delete', thought_id=thought.id)}}" method="POST">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myDeleteModal{{thought.id}}">Delete
+                                </button>
+                        <div class="modal fade" id="myDeleteModal{{thought.id}}" tabindex="-1" role="dialog" aria-labelledby="myDeleteModalLabel{{thought.id}}" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="myDeleteModalLabel{{thought.id}}">
+                                            Delete
+                                        </h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h5>Are you sure?</h5>
+                                        <div class="modal-footer">
+                                            <form action="{{url_for( 'delete', thought_id=thought.id)}}" method="POST">
 
-                            <button type="submit" class="btn btn-primary" value="Delete">Delete
-                            </button>
-                        </form>
+                                                <button type="submit" class="btn btn-primary" value="Delete">Delete
+                                                        </button>
+                                            </form>
+                                        </div>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No, take me back</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </td>
                 </tr>
                 {% endfor %}
