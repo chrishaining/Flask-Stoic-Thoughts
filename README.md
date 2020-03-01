@@ -13,7 +13,7 @@ A web app of quotations/thoughts. It allows users to:
 I've hard-coded the items to be displayed in the carousel, by listing the first five items by index. I tried to iterate through all the items, but it didn't work and it wasn't important enough to keep trying. However, it would be nice to have a way to display all the items in a carousel. Since I have only a limited number of images to add to the cards, it would be necessary to work out how to assign images (perhaps by randomly assigning one of the images).
 
 <p>
-<img src="/app/static/storm.jpg" alt="Stormy seas" width="400">
-<img src="/app/static/calm.jpeg" alt="Calm seas" width="400">
+<img src="/app/static/storm.jpg" alt="Stormy seas" width="400" height="300">
+<img src="/app/static/calm.jpeg" alt="Calm seas" width="400" height="300">
 </p>
 
