@@ -53,9 +53,9 @@
     
     .row {
         padding: 20px;
-        background-color: #90CCF4;
-        border: solid #F78888 2px;
-        margin: 40px
+        background-color: #F3D250;
+        /* border: solid #F78888 2px; */
+        /* margin: 40px */
     }
     
     #card-row {
@@ -68,7 +68,10 @@
     #carousel-row {
         display: flex;
         justify-content: center;
-        border: none
+        background-color: #90CCF4;
+        border: none;
+        margin-top: 10%;
+        width: 100%
     }
     /* columns */
     
@@ -76,10 +79,15 @@
         border-left: solid #F78888 2px;
         border-right: solid #F78888 2px;
     }
+    
+    .col.add-form {
+        display: flex;
+        justify-content: flex-end
+    }
     /* buttons */
     
     .btn.btn-primary {
-        background-color: #F3D250
+        background-color: #5DA2D5
     }
     /* fipcard */
     /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
@@ -180,8 +188,8 @@
     }
     /* forms */
     
-    input {
-        background-color: #ECECEC
+    label {
+        color: black
     }
     
     .btn.btn-link {
@@ -199,7 +207,7 @@
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        background-color: #90CCF4
+        background-color: #ECECEC
     }
     
     .modal-title {

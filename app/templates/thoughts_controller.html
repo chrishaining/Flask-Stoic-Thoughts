@@ -5,8 +5,8 @@
             <h1>Manage your thoughts</h1>
         </div>
 
-        <div class="col-sm-3">
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myAddModal">Add a Thought
+        <div class="col-sm-3 add-form">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myAddModal">Add a Thought
             </button>
             <div class="modal fade" id="myAddModal" tabindex="-1" role="dialog" aria-labelledby="myAddModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -17,14 +17,14 @@
                             </h5>
                         </div>
                         <div class="modal-body">
-                            <form action="/thoughts_controller" method="POST" class="add-form">
+                            <form action="/thoughts_controller" method="POST">
                                 <div class="form-group">
                                     <label for="quotation">Quotation</label>
-                                    <textarea class="form-control" name="quotation" id="quotation" rows=3 placeholder="Add a quotation" required></textarea>
+                                    <textarea class="form-control" name="quotation" id="quotation" rows=4 placeholder="Add a quotation" required></textarea>
                                     <label for="metaphor">Metaphor</label>
-                                    <textarea class="form-control" name="metaphor" id="metaphor" rows=3 placeholder="Add a metaphor" required></textarea>
+                                    <textarea class="form-control" name="metaphor" id="metaphor" rows=4 placeholder="Add a metaphor" required></textarea>
                                     <label for="comment">Comment</label>
-                                    <textarea class="form-control" name="comment" id="comment" rows=3 placeholder="Add a comment" required></textarea>
+                                    <textarea class="form-control" name="comment" id="comment" rows=4 placeholder="Add a comment" required></textarea>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="submit" class="btn btn-primary" value="Add">Add</button>
@@ -78,8 +78,7 @@
                                                 <textarea class="form-control" value="{{thought.comment}}" name="new_comment" rows="4">{{thought.comment}}</textarea>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="submit" class="btn btn-primary" value="Edit ">Submit
-                                                    changes</button>
+                                                <button type="submit" class="btn btn-primary" value="Edit ">Submit                                                    changes</button>
                                             </div>
                                         </form>
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
