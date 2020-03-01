@@ -1,5 +1,11 @@
     html {
-        background-color: #ECECEC;
+        background-color: #F3D250;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+    
+    header,
+    body {
+        background-color: #F3D250;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
     }
     /* navbar */
@@ -31,6 +37,18 @@
     .navbar-nav {
         list-style-type: none;
     }
+    /* containers */
+    
+    .container-fluid {
+        background-color: #F3D250;
+    }
+    
+    .carousel-container {
+        display: flex;
+        background-color: #F3D250;
+        justify-content: center;
+        align-content: middle
+    }
     /* rows */
     
     .row {
@@ -44,7 +62,7 @@
         display: flex;
         justify-content: center;
         border: none;
-        background-color: #ECECEC
+        background-color: #F3D250
     }
     
     #carousel-row {
@@ -57,6 +75,11 @@
     .col {
         border-left: solid #F78888 2px;
         border-right: solid #F78888 2px;
+    }
+    /* buttons */
+    
+    .btn.btn-primary {
+        background-color: #F78888
     }
     /* fipcard */
     /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
@@ -110,6 +133,7 @@
         border-right: solid black 2px;
         border-left: solid black 2px;
         border-bottom: solid black 2px;
+        background-color: #ECECEC
     }
     
     .flip-card-front img,
@@ -145,10 +169,6 @@
     }
     /* forms */
     
-    .add-form {
-        background-color: #F3D250
-    }
-    
     input {
         background-color: #ECECEC
     }
@@ -160,14 +180,15 @@
     }
     /* modals */
     
-    .modal-dialog {
+    .modal-header {
         background-color: #5DA2D5
     }
     
     .modal-body {
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap
+        flex-wrap: wrap;
+        background-color: #90CCF4
     }
     
     .modal-title {

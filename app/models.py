@@ -3,7 +3,7 @@ from app import db
 class Thought(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     quotation = db.Column(db.Text(), index=True)
-    metaphor = db.Column(db.Text(), index=True)
+    metaphor = db.Column(db.Text(), default="This metaphor is waiting to be created", index=True)
     comment = db.Column(db.Text())
 
     def __repr__(self):
