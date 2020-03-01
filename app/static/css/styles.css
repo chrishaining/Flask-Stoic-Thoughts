@@ -1,5 +1,6 @@
     html {
-        background-color: #ECECEC
+        background-color: #ECECEC;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
     }
     /* navbar */
     
@@ -159,7 +160,7 @@
     }
     /* modals */
     
-    .modal {
+    .modal-dialog {
         background-color: #5DA2D5
     }
     
