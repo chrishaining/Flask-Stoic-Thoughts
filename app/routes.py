@@ -58,3 +58,10 @@ def show_carousel():
     thoughts = Thought.query.all()
     return render_template('carousel.html', thoughts=thoughts)
 
+
+# show an accordion view. 
+@app.route('/accordion')
+def show_accordion():
+    thoughts = Thought.query.all()
+    thought = random.choice(thoughts)
+    return render_template('accordion.html', thoughts=thoughts, thought=thought)

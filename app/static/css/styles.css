@@ -213,3 +213,20 @@
     .modal-title {
         color: black
     }
+    /* accordion */
+    
+    #headingOne.card-header {
+        background-color: #5DA2D5
+    }
+    
+    #headingTwo.card-header {
+        background-color: #5DA2D5
+    }
+    
+    #headingThree.card-header {
+        background-color: #5DA2D5
+    }
+    
+    .card-body {
+        background-color: #90CCF4
+    }
